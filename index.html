@@ -1,47 +1,72 @@
-import React from "react"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { Input } from "@/components/ui/input";
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
-const products = [ { id: 1, name: "Летнее платье", price: "2 990 ₽", image: "https://via.placeholder.com/300x400", description: "Легкое летнее платье из хлопка с открытыми плечами." }, { id: 2, name: "Блузка с рюшами", price: "1 990 ₽", image: "https://via.placeholder.com/300x400", description: "Нежная блузка с рюшами, идеально для офиса и прогулок." } ];
+const products = [
+  {
+    id: 1,
+    name: "Летнее платье",
+    price: "2 990 ₽",
+    image: "https://via.placeholder.com/300x400",
+    description: "Легкое летнее платье из хлопка с открытыми плечами."
+  },
+  {
+    id: 2,
+    name: "Блузка с рюшами",
+    price: "1 990 ₽",
+    image: "https://via.placeholder.com/300x400",
+    description: "Нежная блузка с рюшами, идеально для офиса и прогулок."
+  }
+];
 
-export default function ClothingStore() { return ( <div className="p-4 space-y-8"> {/* Главная */} <section className="text-center space-y-4"> <h1 className="text-4xl font-bold">Магазин женской одежды</h1> <p className="text-lg text-gray-600">Стильные образы на каждый день</p> </section>
+export default function ClothingStore() {
+  return (
+    <div className="p-4 space-y-8">
+      {/* Главная */}
+      <section className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">Магазин женской одежды</h1>
+        <p className="text-lg text-gray-600">Стильные образы на каждый день</p>
+      </section>
 
-{/* Каталог */}
-  <section className="grid md:grid-cols-2 gap-6">
-    {products.map(product => (
-      <Card key={product.id} className="overflow-hidden">
-        <img src={product.image} alt={product.name} className="w-full h-80 object-cover" />
-        <CardContent className="p-4 space-y-2">
-          <h2 className="text-xl font-semibold">{product.name}</h2>
-          <p className="text-gray-600">{product.description}</p>
-          <p className="text-lg font-bold">{product.price}</p>
-          <Button asChild className="w-full bg-green-500 hover:bg-green-600">
-            <a
-              href={`https://wa.me/79991234567?text=Здравствуйте!%20Хочу%20заказать:%20${encodeURIComponent(product.name)}%20за%20${encodeURIComponent(product.price)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Заказать в WhatsApp
-            </a>
-          </Button>
-        </CardContent>
-      </Card>
-    ))}
-  </section>
+      {/* Каталог */}
+      <section className="grid md:grid-cols-2 gap-6">
+        {products.map(product => (
+          <Card key={product.id} className="overflow-hidden">
+            <img src={product.image} alt={product.name} className="w-full h-80 object-cover" />
+            <CardContent className="p-4 space-y-2">
+              <h2 className="text-xl font-semibold">{product.name}</h2>
+              <p className="text-gray-600">{product.description}</p>
+              <p className="text-lg font-bold">{product.price}</p>
+              <Button asChild className="w-full bg-green-500 hover:bg-green-600">
+                <a
+                  href={`https://wa.me/79991234567?text=Здравствуйте!%20Хочу%20заказать:%20${encodeURIComponent(product.name)}%20за%20${encodeURIComponent(product.price)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Заказать в WhatsApp
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
 
-  {/* О нас */}
-  <section className="mt-12 space-y-4">
-    <h2 className="text-2xl font-bold">О нас</h2>
-    <p className="text-gray-700">
-      Мы — команда, вдохновленная модой и комфортом. Подбираем для вас лучшие образы, чтобы вы чувствовали себя уверенно и красиво каждый день.
-    </p>
-  </section>
+      {/* О нас */}
+      <section className="mt-12 space-y-4">
+        <h2 className="text-2xl font-bold">О нас</h2>
+        <p className="text-gray-700">
+          Мы — команда, вдохновленная модой и комфортом. Подбираем для вас лучшие образы, чтобы вы чувствовали себя уверенно и красиво каждый день.
+        </p>
+      </section>
 
-  {/* Контакты */}
-  <section className="mt-12 space-y-4">
-    <h2 className="text-2xl font-bold">Контакты</h2>
-    <p>Email: info@fashionstore.ru</p>
-    <p>Телефон: +7 (999) 123-45-67</p>
-    <p>Instagram: @fashionstore</p>
-  </section>
-</div>
-
-); }
+      {/* Контакты */}
+      <section className="mt-12 space-y-4">
+        <h2 className="text-2xl font-bold">Контакты</h2>
+        <p>Email: info@fashionstore.ru</p>
+        <p>Телефон: +7 (999) 123-45-67</p>
+        <p>Instagram: @fashionstore</p>
+      </section>
+    </div>
+  );
+}
