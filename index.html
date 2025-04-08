@@ -1,72 +1,107 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин женской одежды</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+    header, footer, .section {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-content {
+      padding: 16px;
+    }
+    .btn {
+      background-color: #25d366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+    }
+    .contacts p {
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
 
-const products = [
-  {
-    id: 1,
-    name: "Летнее платье",
-    price: "2 990 ₽",
-    image: "https://via.placeholder.com/300x400",
-    description: "Легкое летнее платье из хлопка с открытыми плечами."
-  },
-  {
-    id: 2,
-    name: "Блузка с рюшами",
-    price: "1 990 ₽",
-    image: "https://via.placeholder.com/300x400",
-    description: "Нежная блузка с рюшами, идеально для офиса и прогулок."
-  }
-];
+  <header>
+    <h1>Магазин женской одежды</h1>
+    <p style="text-align:center;">Стильные образы на каждый день</p>
+  </header>
 
-export default function ClothingStore() {
-  return (
-    <div className="p-4 space-y-8">
-      {/* Главная */}
-      <section className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">Магазин женской одежды</h1>
-        <p className="text-lg text-gray-600">Стильные образы на каждый день</p>
-      </section>
+  <section class="section">
+    <h2>Каталог</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x400" alt="Летнее платье" />
+        <div class="card-content">
+          <h3>Летнее платье</h3>
+          <p>Легкое летнее платье из хлопка с открытыми плечами.</p>
+          <strong>2 990 ₽</strong>
+          <a class="btn" href="https://wa.me/79991234567?text=Здравствуйте!%20Хочу%20заказать:%20Летнее%20платье%20за%202990₽" target="_blank">Заказать в WhatsApp</a>
+        </div>
+      </div>
 
-      {/* Каталог */}
-      <section className="grid md:grid-cols-2 gap-6">
-        {products.map(product => (
-          <Card key={product.id} className="overflow-hidden">
-            <img src={product.image} alt={product.name} className="w-full h-80 object-cover" />
-            <CardContent className="p-4 space-y-2">
-              <h2 className="text-xl font-semibold">{product.name}</h2>
-              <p className="text-gray-600">{product.description}</p>
-              <p className="text-lg font-bold">{product.price}</p>
-              <Button asChild className="w-full bg-green-500 hover:bg-green-600">
-                <a
-                  href={`https://wa.me/79991234567?text=Здравствуйте!%20Хочу%20заказать:%20${encodeURIComponent(product.name)}%20за%20${encodeURIComponent(product.price)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Заказать в WhatsApp
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
-
-      {/* О нас */}
-      <section className="mt-12 space-y-4">
-        <h2 className="text-2xl font-bold">О нас</h2>
-        <p className="text-gray-700">
-          Мы — команда, вдохновленная модой и комфортом. Подбираем для вас лучшие образы, чтобы вы чувствовали себя уверенно и красиво каждый день.
-        </p>
-      </section>
-
-      {/* Контакты */}
-      <section className="mt-12 space-y-4">
-        <h2 className="text-2xl font-bold">Контакты</h2>
-        <p>Email: info@fashionstore.ru</p>
-        <p>Телефон: +7 (999) 123-45-67</p>
-        <p>Instagram: @fashionstore</p>
-      </section>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x400" alt="Блузка с рюшами" />
+        <div class="card-content">
+          <h3>Блузка с рюшами</h3>
+          <p>Нежная блузка с рюшами, идеально для офиса и прогулок.</p>
+          <strong>1 990 ₽</strong>
+          <a class="btn" href="https://wa.me/79991234567?text=Здравствуйте!%20Хочу%20заказать:%20Блузка%20с%20рюшами%20за%201990₽" target="_blank">Заказать в WhatsApp</a>
+        </div>
+      </div>
     </div>
-  );
-}
+  </section>
+
+  <section class="section">
+    <h2>О нас</h2>
+    <p>Мы — команда, вдохновлённая модой и комфортом. Подбираем для вас лучшие образы, чтобы вы чувствовали себя уверенно и красиво каждый день.</p>
+  </section>
+
+  <section class="section contacts">
+    <h2>Контакты</h2>
+    <p>Email: info@fashionstore.ru</p>
+    <p>Телефон: +7 (999) 123-45-67</p>
+    <p>Instagram: @fashionstore</p>
+  </section>
+
+  <footer style="text-align:center; padding:20px; background:#f9f9f9;">
+    &copy; 2025 FashionStore. Все права защищены.
+  </footer>
+
+</body>
+</html>
